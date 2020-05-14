@@ -1,0 +1,40 @@
+@import '../../assets/variables.less';
+
+.navbar {
+	background: @theme-color;
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	padding: 12px;
+	color: #f1f1f1;
+
+	&>.title {
+		line-height: 40px;
+		font-size: @font-size-ll;
+	}
+
+	&>:global(.iconfont) {
+		font-size: 24px;
+	}
+}
+
+.tab-bar {
+	display: flex;
+	justify-content: space-around;
+	background: @theme-color;
+
+	.tab-button {
+		flex-grow: 1;
+		font-size: @font-size-m;
+		padding: 8px;
+		line-height: 16px;
+		text-align: center;
+	}
+
+	.tab-button.selected {
+		border-bottom: 4px solid ghostwhite;
+		font-size: @font-size-l;
+		transition: font-size 50ms ease-n;
+		font-weight: bold;
+	}
+}
