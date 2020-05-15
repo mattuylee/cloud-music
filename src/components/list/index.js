@@ -10,7 +10,10 @@ function RecommendList(props) {
       <ul className={css.list}>
         {recommendList.map((item) => (
           <li key={item.id} className="list-item">
-            <img src={item.picUrl + '?param=300x300'} width="100%" alt="推荐歌单" />
+            <div className="image-wraper">
+              <img src={item.picUrl + '?param=300x300'} width="100%" height="100%" alt="推荐歌单" />
+              <div className="decorate"></div>
+            </div>
             <p className="description">{item.name}</p>
             <span className="play-count">
               <i className="iconfont icon-headset"></i>

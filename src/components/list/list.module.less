@@ -9,29 +9,53 @@
 
 .list :global {
 	display: flex;
-    flex-flow: row wrap;
-    padding: 4px;
-    justify-content: space-between;
+	flex-flow: row wrap;
+	justify-content: space-between;
+	padding: 4px;
 
 	.list-item {
-        position: relative;
 		font-size: @font-size-s;
+		position: relative;
 		width: 32%;
-		img {
-            border-radius: 4px;
-        }
-    }
-    .description {
-        margin: 4px 0 16px 0;
-    }
-    .play-count {
-        color: @font-color-light;
-        display: flex;
-        position: absolute;
-        right: 4px;
-        top: 4px;
-        .iconfont {
-            font-size: 12px;
-        }
-    }
+
+		.image-wraper {
+			height: 0;
+			overflow: hidden;
+			padding-top: 100%;
+			position: relative;
+			width: 100%;
+
+			.decorate {
+				position: absolute;
+				top: 0;
+				width: 100%;
+				height: 35px;
+				border-radius: 3px;
+				background: linear-gradient(hsla(0, 0%, 43%, .4), hsla(0, 0%, 100%, 0));
+			}
+
+			img {
+				border-radius: 4px;
+				left: 0;
+				position: absolute;
+				top: 0;
+			}
+		}
+	}
+
+	.description {
+		margin: 4px 0 16px 0;
+	}
+
+	.play-count {
+		color: @font-color-light;
+		display: flex;
+		position: absolute;
+		right: 4px;
+		top: 4px;
+
+		.iconfont {
+			font-size: 12px;
+		}
+	}
 }
