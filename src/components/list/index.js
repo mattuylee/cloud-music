@@ -3,7 +3,7 @@ import { getCount } from '../../api/util';
 import * as css from './list.module.less';
 
 function RecommendList(props) {
-  const { recommendList } = props
+  const { recommendList } = props;
   return (
     <>
       <label className={css.label}>推荐歌单</label>

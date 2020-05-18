@@ -6,17 +6,19 @@ import { NavLink } from 'react-router-dom';
 function Home(props) {
   return (
     <>
-    <div className={css.navbar}>
+      <div className={css.navbar}>
         <i className="iconfont icon-menu"></i>
         <span className={css.title}>Cloud Music</span>
         <i className="iconfont icon-search"></i>
-    </div>
-    <div className={css.tabBar}>
-      <NavLink to="/recommend" className={css.tabButton} activeClassName={css.selected}><span>推荐</span></NavLink>
-      <NavLink to="/singers" className={css.tabButton} activeClassName={css.selected}><span>歌手</span></NavLink>
-      <NavLink to="/rank" className={css.tabButton} activeClassName={css.selected}><span>排行榜</span></NavLink>
-    </div>
-    {renderRoutes(props.route.routes)}
+      </div>
+      <div className={css.tabBar}>
+        <NavLink to="/recommend" className={css.tabButton} activeClassName={css.selected}><span>推荐</span></NavLink>
+        <NavLink to="/singers" className={css.tabButton} activeClassName={css.selected}><span>歌手</span></NavLink>
+        <NavLink to="/rank" className={css.tabButton} activeClassName={css.selected}><span>排行榜</span></NavLink>
+      </div>
+      <div className={css.routeContainer}>
+        {renderRoutes(props.route.routes)}
+      </div>
     </>
   );
 }
