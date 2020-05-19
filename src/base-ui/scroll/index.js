@@ -25,13 +25,14 @@ const Scroll = forwardRef((props, ref) => {
     return () => {
       setBScroll(null);
     };
+    //eslint-disable-next-line
   }, []);
 
-  // useEffect(() => {
-  //   if (refresh && bScroll) {
-  //     bScroll.refresh();
-  //   }
-  // });
+  useEffect(() => {
+    if (props.refresh && bScroll) {
+      bScroll.refresh();
+    }
+  });
 
   useEffect(() => {
     if (!bScroll || !props.pullUp) { return; }
