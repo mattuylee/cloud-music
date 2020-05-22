@@ -54,7 +54,7 @@ function Singers(props) {
             return (
               <ListItem key={item.accountId + "" + index} onClick={() => enterDetail(item.id)}>
                 <div className="img_wrapper">
-                  <img src={`${item.picUrl}?param=300x300`} width="100%" height="100%" alt="music" />
+                  <img src={`${item.picUrl}?param=256x256`} width="100%" height="100%" alt="music" />
                 </div>
                 <span className="name">{item.name}</span>
               </ListItem>
