@@ -12,8 +12,8 @@ function HorizonItems(props) {
           <span className="title">{title}</span>
           {list.map(item => (
             <li key={item.key || item.value}
-              className={selected === item ? 'selected' : ''}
-              onClick={() => onSelect && onSelect(item)}>
+              className={selected === (item.key || item.value) ? 'selected' : ''}
+              onClick={() => onSelect && onSelect(item.key || item.value)}>
               {item && (item.value || item)}
             </li>
           ))}
