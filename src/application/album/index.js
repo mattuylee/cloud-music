@@ -23,14 +23,6 @@ function Album(props) {
 
   const id = props.match.params.id;
 
-  useEffect(()=>{
-    console.log('render')
-  })
-useEffect(()=>{
-    console.log('create')
-    return ()=>console.log('destroy')
-  }, [])
-  
   useEffect(() => {
     getAlbumDataDispatch(id);
   }, [getAlbumDataDispatch, id]);
