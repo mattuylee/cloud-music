@@ -6,6 +6,7 @@ import Scroll from '../../base-ui/scroll';
 import Slider from '../../components/slider';
 import * as actionTypes from './store/action-creators';
 import * as css from './recommend.module.less';
+import { renderRoutes } from 'react-router-config';
 
 
 function Recommend(props) {
@@ -23,14 +24,17 @@ function Recommend(props) {
   const recommendListJS = recommendList ? recommendList.toJS() : [];
 
   return (
-    <Scroll>
-      <div className={css.scrollContent}>
-        <div className={css.scrollMask}></div>
-        <Loading enabled={isLoading}></Loading>
-        <Slider bannerList={bannerListJS}></Slider>
-        <RecommendList recommendList={recommendListJS}></RecommendList>
-      </div>
-    </Scroll>
+    <>
+      <Scroll>
+        <div className={css.scrollContent}>
+          <div className={css.scrollMask}></div>
+          <Loading enabled={isLoading}></Loading>
+          <Slider bannerList={bannerListJS}></Slider>
+          <RecommendList recommendList={recommendListJS}></RecommendList>
+        </div>
+      </Scroll>
+      {renderRoutes(props.route.routes)}
+    </>
   );
 }
 

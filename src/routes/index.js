@@ -1,5 +1,6 @@
 import React from 'react';
 import { Redirect } from "react-router-dom";
+import Album from '../application/album';
 import Home from '../application/home';
 import Rank from '../application/rank';
 import Recommend from '../application/recommend';
@@ -19,7 +20,13 @@ export default [
       },
       {
         path: "/recommend",
-        component: Recommend
+        component: Recommend,
+        routes: [
+          {
+            path: "/recommend/:id",
+            component: Album
+          }
+        ]
       },
       {
         path: "/singers",
@@ -31,4 +38,4 @@ export default [
       }
     ]
   }
-]
+];

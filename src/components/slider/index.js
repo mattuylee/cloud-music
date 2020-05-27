@@ -20,7 +20,6 @@ function Slider(props) {
       setSliderSwiper(newSliderSwiper);
     }
   }, [bannerList.length, sliderSwiper]);
-
   return (
     <div className={css.slider}>
       <div className="swiper-wrapper">

@@ -7,9 +7,9 @@ function Home(props) {
   return (
     <>
       <div className={css.navbar}>
-        <i className="iconfont icon-menu"></i>
+        <span className="iconfont menu">&#xe65c;</span>
         <span className={css.title}>Cloud Music</span>
-        <i className="iconfont icon-search"></i>
+        <span className="iconfont search">&#xe62b;</span>
       </div>
       <div className={css.tabBar}>
         <NavLink to="/recommend" className={css.tabButton} activeClassName={css.selected}><span>推荐</span></NavLink>

@@ -24,10 +24,22 @@ export const filterIndex = rankList => {
 //找出排行榜的编号
 export const filterIdx = name => {
   for (var key in RankTypes) {
-    if (RankTypes[key] === name) return key;
+    if (RankTypes[key] === name) { return key; }
   }
   return null;
 };
+
+// 处理歌手列表拼接歌手名字
+export const getName = list => {
+  let str = "";
+  list.map((item, index) => {
+    str += index === 0 ? item.name : "/" + item.name;
+    return item;
+  });
+  return str;
+};
+
+export const isEmptyObject = obj => !obj || Object.keys(obj).length === 0;
 
 export function throttle(fn, time) {
   let canRun = true;
