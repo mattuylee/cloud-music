@@ -8,6 +8,7 @@ const Scroll = forwardRef((props, ref) => {
   //current 指向初始化 bs 实例需要的 DOM 元素
   const scrollContaninerRef = useRef();
 
+  const { onScroll } = props;
 
   useEffect(() => {
     const scroll = new BScroll(scrollContaninerRef.current, {
@@ -27,6 +28,13 @@ const Scroll = forwardRef((props, ref) => {
     };
     //eslint-disable-next-line
   }, []);
+
+  useEffect(() => {
+    if (!bScroll || !onScroll) { return; }
+    bScroll.on('scroll', (ev) => {
+      onScroll(ev);
+    });
+  }, [bScroll, onScroll]);
 
   useEffect(() => {
     if (props.refresh && bScroll) {
