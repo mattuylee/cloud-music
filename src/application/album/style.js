@@ -56,7 +56,7 @@ export const TopDesc = styled.div`
       background: rgba(7, 17, 27, 0.2);
     }
   }
-  .img_wrapper{
+  .img-wrapper{
     width: 120px;
     height: 120px;
     position: relative;         
@@ -68,7 +68,7 @@ export const TopDesc = styled.div`
       border-radius: 3px;
       background: linear-gradient(hsla(0,0%,43%,.4),hsla(0,0%,100%,0));
     }
-    .play_count {
+    .play-count {
       position: absolute;
       right: 2px;
       top: 2px;
@@ -85,7 +85,7 @@ export const TopDesc = styled.div`
       border-radius:3px;
     }
   }
-  .desc_wrapper {
+  .desc-wrapper {
     flex: 1;
     display: flex;
     flex-direction: column;
@@ -147,14 +147,14 @@ export const SongList = styled.div`
   border-radius: 10px;
   opacity: 0.98;
   background: ${style["highlight-background-color"]};
-  .first_line{
+  .first-line{
     box-sizing: border-box;
     padding: 10px 0;
     margin-left: 10px;
     position: relative;
     justify-content: space-between;
     border-bottom: 1px solid ${style["border-color"]};
-    .play_all{
+    .play-all{
       display: inline-block;
       line-height: 24px;
       color: ${style["font-color-desc"]};
@@ -171,7 +171,7 @@ export const SongList = styled.div`
         vertical-align: top;
       }
     }
-    .add_list,.isCollected {
+    .add-list,.is-collected {
       display: flex;
       align-items: center;
       position: absolute;
@@ -193,7 +193,7 @@ export const SongList = styled.div`
         line-height: 34px;
       }
     }
-    .isCollected{
+    .is-collected{
       display: flex;
       background: ${style["background-color"]};
       color: ${style["font-color-desc"]};

@@ -34,7 +34,7 @@ export const ListItem = styled.li`
   display: ${props => props.tracks.length ? "flex" : ""};
   padding: 3px 0;
   border-bottom: 1px solid ${style["border-color"]};
-  .img_wrapper{
+  .img-wrapper{
     width:  ${props => props.tracks.length ? "27vw" : "32vw"};
     height: ${props => props.tracks.length ? "27vw" : "32vw"};
     border-radius: 3px;
@@ -52,7 +52,7 @@ export const ListItem = styled.li`
       height: 100%;
       border-radius: 3px;
     }
-    .update_frequecy{
+    .update-frequecy{
       position: absolute;
       left: 7px;
       bottom: 7px;

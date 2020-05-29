@@ -53,10 +53,10 @@ function Rank(props) {
           list.map((item) => {
             return (
               <ListItem key={item.coverImgId} tracks={item.tracks} onClick={() => enterDetail(item.name)}>
-                <div className="img_wrapper">
+                <div className="img-wrapper">
                   <img src={item.coverImgUrl} alt="" />
                   <div className="decorate"></div>
-                  <span className="update_frequecy">{item.updateFrequency}</span>
+                  <span className="update-frequecy">{item.updateFrequency}</span>
                 </div>
                 {renderSongList(item.tracks)}
               </ListItem>

@@ -58,15 +58,15 @@ function Album(props) {
         <div className="background">
           <div className="filter"></div>
         </div>
-        <div className="img_wrapper">
+        <div className="img-wrapper">
           <div className="decorate"></div>
           <img src={currentAlbum.coverImgUrl} alt="" />
-          <div className="play_count">
+          <div className="play-count">
             <i className="iconfont play">&#xe885;</i>
             <span className="count">{getCount(currentAlbum.subscribedCount)}</span>
           </div>
         </div>
-        <div className="desc_wrapper">
+        <div className="desc-wrapper">
           <div className="title">{currentAlbum.name}</div>
           <div className="person">
             <div className="avatar">
@@ -105,12 +105,12 @@ function Album(props) {
   const renderSongList = () => {
     return (
       <SongList>
-        <div className="first_line">
-          <div className="play_all">
+        <div className="first-line">
+          <div className="play-all">
             <i className="iconfont">&#xe6e3;</i>
             <span>播放全部 <span className="sum">(共{currentAlbum.tracks.length}首)</span></span>
           </div>
-          <div className="add_list">
+          <div className="add-list">
             <i className="iconfont">&#xe62d;</i>
             <span>收藏({getCount(currentAlbum.subscribedCount)})</span>
           </div>
