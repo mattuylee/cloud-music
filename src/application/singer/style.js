@@ -6,7 +6,7 @@ export const Container = styled.div`
   top: 0;
   left: 0;
   right: 0;
-  bottom: ${props => props.play > 0 ? "60px" : 0};
+  bottom: ${props => props.play > 0 ? "60px": 0};
   width: 100%;
   z-index: 100;
   overflow: hidden;
@@ -26,7 +26,8 @@ export const Container = styled.div`
     transition: transform .3s;
     transform: rotateZ(30deg) translate3d(100%, 0, 0);
   }
-`;
+`
+
 export const ImgWrapper = styled.div`
   position: relative;
   width: 100%;
@@ -42,12 +43,12 @@ export const ImgWrapper = styled.div`
     left: 0;
     width: 100%;
     height: 100%;
+    /* : blur(20px); */
     background: rgba(7, 17, 27, 0.3);
   }
-`;
-
+`
 export const CollectButton = styled.div`
-  position: absolute;
+  position: fixed;
   left: 0; right: 0;
   margin: auto;
   box-sizing: border-box;
@@ -72,14 +73,14 @@ export const CollectButton = styled.div`
     font-size:14px;
     letter-spacing: 5px;
   }
-`;
+`
 
 export const SongListWrapper = styled.div`
   position: absolute;
   z-index: 50;
   top: 0;
   left: 0;
-  bottom: 0;
+  bottom: ${props => props.play ? "60px": 0};
   right: 0;
   >div{
     position: absolute;
@@ -87,8 +88,7 @@ export const SongListWrapper = styled.div`
     width: 100%;
     overflow: visible;
   }
-`;
-
+`
 export const BgLayer = styled.div`
   position: absolute;
   top: 0;
@@ -97,4 +97,4 @@ export const BgLayer = styled.div`
   background: white;
   border-radius: 10px;
   z-index: 50;
-`;
+`

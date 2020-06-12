@@ -8,11 +8,11 @@ const defaultState = fromJS({
   enterLoading: true,
   pullUpLoading: false,
   pullDownLoading: false,
-  listOffset: 0,
-});
+  listOffset: 0, // 请求列表的偏移不是page，是个数
+})
 
 export default (state = defaultState, action) => {
-  switch (action.type) {
+  switch(action.type) {
     case actionTypes.CHANGE_ALPHA:
       return state.merge({
         'alpha': action.data,
@@ -24,7 +24,7 @@ export default (state = defaultState, action) => {
         'category': action.data,
         listOffset: 0,
         enterLoading: true
-      });
+      });;
     case actionTypes.CHANGE_SINGER_LIST:
       return state.set('singerList', action.data);
     case actionTypes.CHANGE_LIST_OFFSET:
@@ -38,4 +38,4 @@ export default (state = defaultState, action) => {
     default:
       return state;
   }
-};
+}

@@ -1,14 +1,8 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import App from './app';
-import * as serviceWorker from './serviceWorker';
+import App from './App.js';
+import fastclick from 'fastclick';
 
-//引入全局样式
-import './style';
+fastclick.attach(document.body);
 
-ReactDOM.render(
-  <App />,
-  document.getElementById('root'),
-)
-
-serviceWorker.unregister();
+ReactDOM.render(<App />,document.getElementById('root'));

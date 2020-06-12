@@ -1,35 +1,42 @@
 import React from 'react';
-import { getCount } from '../../api/util';
-import * as css from './list.module.less';
-import { withRouter } from 'react-router';
+import { 
+  ListWrapper,
+  ListItem,
+  List
+} from './style';
+import LazyLoad from "react-lazyload";
+import { withRouter } from 'react-router-dom';
 
 function RecommendList(props) {
-  const { recommendList } = props;
-
-  const enterDetail = function (id) {
-    props.history.push(`/recommend/${id}`);
-  };
-
+  const enterDetail = (id) => {
+    props.history.push(`/recommend/${id}`)
+  }
   return (
-    <>
-      <label className={css.label}>推荐歌单</label>
-      <ul className={css.list}>
-        {recommendList.map((item) => (
-          <li key={item.id} className="list-item" onClick={() => enterDetail(item.id)}>
-            <div className="image-wraper">
-              <img src={item.picUrl + '?param=300x300'} width="100%" height="100%" alt="推荐歌单" />
-              <div className="decorate"></div>
-            </div>
-            <p className="description">{item.name}</p>
-            <span className="play-count">
-              <i className="iconfont icon-headset"></i>
-              {getCount(item.playCount)}
-            </span>
-          </li>
-        ))}
-      </ul>
-    </>
+    <ListWrapper>
+      <h1 className="title">推荐歌单</h1>
+      <List>
+        {
+          props.recommendList.map(item => {
+            return (
+              <ListItem key={item.id} onClick={() => enterDetail(item.id)}>
+                <div className="img_wrapper">
+                  <div className="decorate"></div>
+                  <LazyLoad placeholder={<img width="100%" height="100%" src={require('./music.png')} alt="music"/>}>
+                    <img src={item.picUrl + "?param=300x300"} width="100%" height="100%" alt="music"/>
+                  </LazyLoad>
+                  <div className="play_count">
+                    <i className="iconfont play">&#xe885;</i>
+                    <span className="count">{Math.floor(item.playCount/10000)}万</span>
+                  </div>
+                </div>
+                <div className="desc">{item.name}</div>
+              </ListItem>
+            )
+          })
+        }
+      </List>
+    </ListWrapper>
   );
-}
-
-export default React.memo(withRouter(RecommendList));
+  }
+ 
+export default withRouter(React.memo(RecommendList));

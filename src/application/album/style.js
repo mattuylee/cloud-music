@@ -6,9 +6,11 @@ export const Container = styled.div`
   top: 0;
   left: 0;
   right: 0;
-  bottom: 0;
-  z-index: 1000;
-  background: #fff;
+  bottom: ${props => props.play > 0 ? "60px": 0};
+  width: 100%;
+  z-index: 100;
+  overflow: hidden;
+  background: #f2f3f4;
   transform-origin: right bottom;
   &.fly-enter, &.fly-appear{
     transform: rotateZ(30deg) translate3d(100%, 0, 0);
@@ -24,39 +26,29 @@ export const Container = styled.div`
     transition: transform .3s;
     transform: rotateZ(30deg) translate3d(100%, 0, 0);
   }
-`;
-
+`
 export const TopDesc = styled.div`
   background-size: 100%;
   padding: 5px 20px;
-  padding-bottom: 50px;
-  margin-bottom: 20px;
   display: flex;
-  justify-content: space-around;
   align-items: center;
+  justify-content: space-around;
   box-sizing: border-box;
   width: 100%;
-  height: 275px;
+  height: 200px;
   position: relative;
+  z-index: 100;
   .background{
-    z-index: -1;
-    background: url(${props => props.background}) no-repeat;
-    background-position: 0 0;
-    background-size: 100% 100%;
+    /* z-index: -1; */
+    background: url(${props => props.background}) left top no-repeat;
+
     position: absolute;
     width: 100%;
     height: 100%;
     filter: blur(20px);
-    .filter{
-      position: absolute;
-      z-index: 10;
-      top: 0; left: 0;
-      width: 100%;
-      height: 100%;
-      background: rgba(7, 17, 27, 0.2);
-    }
+    transform: scale(1.5);
   }
-  .img-wrapper{
+  .img_wrapper{
     width: 120px;
     height: 120px;
     position: relative;         
@@ -68,7 +60,7 @@ export const TopDesc = styled.div`
       border-radius: 3px;
       background: linear-gradient(hsla(0,0%,43%,.4),hsla(0,0%,100%,0));
     }
-    .play-count {
+    .play_count {
       position: absolute;
       right: 2px;
       top: 2px;
@@ -85,7 +77,7 @@ export const TopDesc = styled.div`
       border-radius:3px;
     }
   }
-  .desc-wrapper {
+  .desc_wrapper {
     flex: 1;
     display: flex;
     flex-direction: column;
@@ -94,7 +86,9 @@ export const TopDesc = styled.div`
     padding: 0 10px;
     .title{
       max-height: 70px;
-      color: ${style["font-color-light"]};
+      overflow: hidden;
+      text-overflow: ellipsis;
+      color: ${style["font-color-desc"]};
       font-weight: 700;
       line-height: 1.5;
       font-size: ${style["font-size-l"]};
@@ -114,19 +108,20 @@ export const TopDesc = styled.div`
       .name {
         line-height: 20px;
         font-size: ${style["font-size-m"]};
-        color: ${style["font-color-desc-v2"]};
+        color: ${style["font-color-desc"]};
       }
     }
   }
-`;
+`
 
 export const Menu = styled.div`
   position: relative;
   display: flex;
   justify-content: space-between;
   box-sizing: border-box;
-  padding: 0 30px 20px 30px;
-  margin: -100px 0 0 0;
+  margin: 0 30px;
+  margin-top: -20px;
+  margin-bottom: 10px;
   >div {
     display: flex;
     flex-direction: column;
@@ -134,27 +129,26 @@ export const Menu = styled.div`
     text-align: center;
     font-size: ${style["font-size-s"]};
     color: #3b1f1f;
-    color: ${style["font-color-light"]};
+    color: ${style["font-color-desc"]};
     z-index:1000;
     font-weight: 500;
     .iconfont {
       font-size: 20px;
     }
   }
-`;
+`
 
 export const SongList = styled.div`
   border-radius: 10px;
   opacity: 0.98;
-  background: ${style["highlight-background-color"]};
-  .first-line{
+  .first_line{
     box-sizing: border-box;
     padding: 10px 0;
     margin-left: 10px;
     position: relative;
     justify-content: space-between;
     border-bottom: 1px solid ${style["border-color"]};
-    .play-all{
+    .play_all{
       display: inline-block;
       line-height: 24px;
       color: ${style["font-color-desc"]};
@@ -171,7 +165,7 @@ export const SongList = styled.div`
         vertical-align: top;
       }
     }
-    .add-list,.is-collected {
+    .add_list {
       display: flex;
       align-items: center;
       position: absolute;
@@ -192,21 +186,15 @@ export const SongList = styled.div`
         font-size: 14px;
         line-height: 34px;
       }
-    }
-    .is-collected{
-      display: flex;
-      background: ${style["background-color"]};
-      color: ${style["font-color-desc"]};
-    }
+  }
 }
-`;
+`
 export const SongItem = styled.ul`
   >li{
     display: flex;
     height: 60px;
     align-items: center;  
     .index{
-      flex-basis: 60px;
       width: 60px;
       height: 60px;
       line-height: 60px;
@@ -221,10 +209,6 @@ export const SongItem = styled.ul`
       flex-direction: column;
       justify-content: space-around;
       border-bottom: 1px solid ${style["border-color"]};
-      ${style.noWrap()}
-      >span{
-        ${style.noWrap()}
-      }
       >span:first-child{
         color: ${style["font-color-desc"]};
       }
@@ -234,4 +218,6 @@ export const SongItem = styled.ul`
       }
     }
   }
-`;
+`
+
+

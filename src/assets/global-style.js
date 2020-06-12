@@ -22,7 +22,7 @@ const bgFull = () => {
     background-position: 50%;
     background-size: contain;
     background-repeat: no-repeat;
-  `;
+  `
 };
 
 export default {
