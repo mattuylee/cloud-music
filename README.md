@@ -1,5 +1,7 @@
 本仓库为掘金小册[《React Hooks与Immutable数据流实战》](https://juejin.im/book/5da96626e51d4524ba0fd237)项目实战代码仓库。大体跟随作者[@神三元](https://github.com/sanyuan0704)流程进行，但细节上可能不一致。
 
+这是作者[原仓库](https://github.com/sanyuan0704/react-cloud-music)。
+
 ## 约定&代码规范
 * 默认使用create-react-app脚手架的配置。    
 * 文件名统一小写，用“-”连接（包括React组件文件）。
